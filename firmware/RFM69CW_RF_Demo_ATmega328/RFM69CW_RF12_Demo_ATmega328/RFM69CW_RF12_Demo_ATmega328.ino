@@ -622,12 +622,12 @@ void loop () {
         }
 #if RF69_COMPAT
         // display RSSI value after packet data
-        showString(PSTR(" ("));
+        showString(PSTR(" "));
         if (config.hex_output)
             showByte(RF69::rssi);
         else
-            Serial.print(-(RF69::rssi>>1));
-        showString(PSTR(") "));
+            Serial.print((RF69::rssi>>1));
+        showString(PSTR(" "));
 #endif
         Serial.println();
 
